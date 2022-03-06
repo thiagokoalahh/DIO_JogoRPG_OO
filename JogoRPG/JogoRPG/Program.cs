@@ -1,5 +1,7 @@
-﻿using JogoRPG.src.Entities.Classes;
+﻿using JogoRPG.src.Entities;
+using JogoRPG.src.Entities.Classes;
 using System;
+using System.Collections.Generic;
 
 namespace JogoRPG
 {
@@ -12,15 +14,19 @@ namespace JogoRPG
             WhiteWizard whiteWizard = new WhiteWizard("Jennica", 10, "White Wizard");
             BlackWizard blackWizard = new BlackWizard("Tatay", 10, "Black Wizard");
 
-            Console.WriteLine(knight);
-            Console.WriteLine();
-            Console.WriteLine(ninja);
-            Console.WriteLine();
-            Console.WriteLine(whiteWizard);
-            Console.WriteLine();
-            Console.WriteLine(blackWizard);
+            List<BaseHero> heroes = new List<BaseHero>();
+            heroes.Add(knight);
+            heroes.Add(ninja);
+            heroes.Add(blackWizard);
+            heroes.Add(whiteWizard);
 
-            Console.WriteLine();
+            foreach (BaseHero hero in heroes)
+            {
+                Console.WriteLine(hero);
+                Console.WriteLine(hero.Attack());
+                Console.WriteLine();
+            }
+
         }
     }
 }

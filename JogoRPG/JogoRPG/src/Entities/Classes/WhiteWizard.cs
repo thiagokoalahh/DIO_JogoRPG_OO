@@ -15,24 +15,25 @@
 
         public override string Attack()
         {
-            return Name + " Lançou Magia Sagrada";
-        }
-
-        public string Attack(int Bonus)
-        {
-            if (Bonus > 6)
+            string attackText = Name + " ";
+            if (Level < 10)
             {
-                return Name + " Lançou Magia super efetiva com bônus de " + Bonus;
+                attackText = "Lança magia sagrada fraca";
+            }
+            else if (Level < 20)
+            {
+                attackText = "Lança magia sagrada média";
+            }
+            else if (Level < 30)
+            {
+                attackText = "Lança magia sagrada forte";
             }
             else
             {
-                return Name + " Lançou uma magia com força fraca com bônus de " + Bonus;
+                attackText = "Lança magia sagrada super forte";
             }
+
+            return attackText;
         }
-
-
-
-
-
     }
 }

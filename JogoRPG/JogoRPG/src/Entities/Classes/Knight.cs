@@ -15,7 +15,25 @@
 
         public override string Attack()
         {
-            return Name + " Atacou com sua espada";
+            string attackText = Name + " ";
+            if (Level < 10)
+            {
+                attackText = "Ataque fraco com espada";
+            }
+            else if (Level < 20)
+            {
+                attackText = "Ataque médio com espada";
+            }
+            else if (Level < 30)
+            {
+                attackText = "Ataque forte com espada";
+            }
+            else
+            {
+                attackText = "Ataque super forte com espada";
+            }
+
+            return attackText;
         }
     }
 }

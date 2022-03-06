@@ -15,7 +15,25 @@
 
         public override string Attack()
         {
-            return Name + " Lançou Magia Negra";
+            string attackText = Name + " ";
+            if (Level < 10)
+            {
+                attackText = "Lança magia negra fraca";
+            }
+            else if (Level < 20)
+            {
+                attackText = "Lança magia negra média";
+            }
+            else if (Level < 30)
+            {
+                attackText = "Lança magia negra forte";
+            }
+            else
+            {
+                attackText = "Lança magia negra super forte";
+            }
+
+            return attackText;
         }
     }
 }
